@@ -1,0 +1,19 @@
+<a href="#!/dashboard">Home</a>
+<a href="#!/">Logout</a>
+<h3>New Question</h3>
+<div ng-controller="usersController" class="container">
+  <form ng-submit="add()">
+    <div class="form-group">
+      <h6>{{ errorMsg.errors.question.message }}</h6>
+      <label for="question">Question:</label>
+      <input type="text" class="form-control" ng-model="item.question" placeholder="Type in Question">
+    </div>
+    <div class="form-group">
+      <h6>{{ errorMsg.errors.description.message }}</h6>
+      <label for="description">Description (optional):</label>
+      <input type="text" class="form-control" ng-model="item.description" placeholder="Type in Description">
+    </div>
+    <input type="button" href="#!/dashboard" value="Cancel">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

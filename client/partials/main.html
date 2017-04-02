@@ -1,0 +1,21 @@
+<h3>Current Polls:</h3>
+<div ng-controller="usersController" class="container">
+  <a href="#!/new">Add a Question</a>
+  <a href="#!/">Logout</a>
+  <label for="search">Search:</label>
+  <input type="text" name="search" ng-model="userName" placeholder="Search">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Question</th>
+      <th>Answers</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="i in users | filter: userName">
+      <td>{{ i.question }}</a></td>
+      <td>{{ i.count }}</td>
+      <td><a href="#!/question/{{i._id}}">Show</a><br><a href="#" ng-show="loggedInUser._id == i._user_id" type="button" ng-click="remove(i)">Delete</a>
+        <!-- <button ng-show="loggedInUser._id == i._user_id" type="button" ng-click="remove(i)">Delete</button> -->
+<!-- ng-show="loggedInUser.name == i.name" -->
+    </tr>
+  </table>
+</div>

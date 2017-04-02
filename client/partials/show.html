@@ -1,0 +1,21 @@
+<div ng-controller="showController" class="container">
+<a href="#!/dashboard">Home</a>
+<a href="#!/">Logout</a>
+<a href="#!/answer/{{showUser._id}}">Answer this Question</a>
+  <h1>{{ showUser.question }}</h1>
+  <h3>{{ showUser.description }}</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Answer</th>
+      <th>Likes</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="i in answer">
+      <td>{{ i.name }}</td>
+      <td>{{ i.answer }}<br/><p>{{ i.detail }}</p></td>
+      <td>{{ i.count }} likes</td>
+      <td><button type="button" ng-click="like(i, $index)">Like!</button></td>
+    </tr>
+  </table>
+</div>
